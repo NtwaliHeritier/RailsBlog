@@ -1,4 +1,8 @@
 <h1><%=@article.title%></h1>
+Tags:
+<%@article.tags.each do |tag|%>
+<%=link_to tag, tag_path(tag)%>
+<%end%>
 <p><%=@article.body%></p>
 <h3>Comments(<%=@article.comments.size%>)</h3>
 <%=render partial: 'comments/form'%>
